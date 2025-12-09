@@ -59,8 +59,32 @@
       color: #555;
       transform: rotate(-0.5deg);
     }
+    audio {
+    width: 250px;
+    margin: 20px auto;
+    display: block;
+    filter: drop-shadow(2px 2px 0 #000);
+    transform: rotate(-2deg);
+  }
+
+  audio::-webkit-media-controls-panel {
+    background: #fffbe6;
+    border: 2px dashed #000;
+  }
+
+  audio::-webkit-media-controls-play-button,
+  audio::-webkit-media-controls-mute-button {
+    transform: rotate(4deg);
+    filter: hue-rotate(10deg);
+  }
   </style>
 </head>
+
+
+<audio controls loop>
+  <source src="audio/dish.mp3" type="audio/mpeg">
+</audio>
+
 
 <body>
   <header>
@@ -101,6 +125,6 @@
     <div class="container">
       <img src="img/brick-bg.jpeg" alt="Brenna and Nick" style="max-width: 100%; height: auto; border: 5px solid #ccc; box-shadow: 2px 2px 8px rgba(0,0,0,0.2); transform: rotate(-0.3deg);" />
     </div>
-    
+
 </body>
 </html>
