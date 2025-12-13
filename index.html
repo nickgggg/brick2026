@@ -14,12 +14,12 @@
       padding: 0;
       background: #fffef4;
       font-family:
-       "Comic Sans MS", "Comic Sans",
-        "Chalkboard SE", "Chalkboard", 
-       "Marker Felt",
-    -apple-system, system-ui,
-    BlinkMacSystemFont, "Segoe UI",
-    sans-serif;
+        "Comic Sans MS", "Comic Sans",
+        "Chalkboard SE", "Chalkboard",
+        "Marker Felt",
+        -apple-system, system-ui,
+        BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
       color: #222;
       text-align: center;
     }
@@ -87,39 +87,39 @@
       filter: hue-rotate(10deg);
     } */
 
-    
-.audio-shell {
-  display: inline-block;
-  margin: 30px auto;
-  padding: 12px 18px;
-  border: 3px dashed #000;
-  background: #fffbe6;
-  box-shadow: 4px 4px 0 #000;
-  transform: rotate(-2deg);
-}
 
-.audio-shell audio {
-  display: block;
-  width: 260px;
-  max-width: 80vw;
-}
+    .audio-shell {
+      display: inline-block;
+      margin: 30px auto;
+      padding: 12px 18px;
+      border: 3px dashed #000;
+      background: #fffbe6;
+      box-shadow: 4px 4px 0 #000;
+      transform: rotate(-2deg);
+    }
 
-.audio-label {
-  font-size: 0.85rem;
-  text-transform: uppercase;
-  letter-spacing: 1px;
-  margin-bottom: 6px;
-}
+    .audio-shell audio {
+      display: block;
+      width: 260px;
+      max-width: 80vw;
+    }
 
-audio::-webkit-media-controls-panel {
-  background: #fffdf2;
-  border-radius: 0;
-}
+    .audio-label {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+      margin-bottom: 6px;
+    }
 
-audio::-webkit-media-controls-play-button,
-audio::-webkit-media-controls-mute-button {
-  transform: rotate(3deg);
-}
+    audio::-webkit-media-controls-panel {
+      background: #fffdf2;
+      border-radius: 0;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-mute-button {
+      transform: rotate(3deg);
+    }
 
 
     .gallery {
@@ -136,6 +136,10 @@ audio::-webkit-media-controls-mute-button {
     .gallery {
       font-style: italic;
     }
+    .bottom {
+      margin: 30px 0;
+      font-size: 0.9rem;
+    }
   </style>
 </head>
 
@@ -144,8 +148,7 @@ audio::-webkit-media-controls-mute-button {
   <source src="audio/dish.mp3" type="audio/mpeg">
 </audio> -->
 
-
-<div class="audio-shell">
+<div id="top" class="audio-shell">
   <div class="audio-label">🎧</div>
   <audio controls loop>
     <source src="music.mp3" type="audio/mpeg">
@@ -153,12 +156,13 @@ audio::-webkit-media-controls-mute-button {
   </audio>
 </div>
 
-
-
 <body>
   <header>
     <h1>🧱 BRICK 💍</h1>
     <p>Brenna n Nick r getting married</p>
+    <div class="gallery">
+      <img src="img/brickst.JPG" />
+    </div>
   </header>
 
   <section>
@@ -168,8 +172,18 @@ audio::-webkit-media-controls-mute-button {
           href="webcal://p108-caldav.icloud.com/published/2/NDM1NzMwOTYxNDM1NzMwOVAcYGeuESNDXVVzl1B-RteHem269uU1O1sOWOTA8qf8TU99fjKcwgzDvhwTMyJKAeG530ujH77k4kcQ-YY7HOU">10/10/2026...
           click 2 subscribe</a></p>
       <p>Where: <a
-          href="https://www.google.com/maps/place/18752+Gregory+Ln,+Huntington+Beach,+CA+92646/@33.6897733,-117.9830413,3a,35.9y,350.5h,94.88t/data=!3m7!1e1!3m5!1sqXy5yqeoyzyBSy3CMuTeBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.877623197756023%26panoid%3DqXy5yqeoyzyBSy3CMuTeBg%26yaw%3D350.49933236793646!7i16384!8i8192!4m15!1m8!3m7!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!2s18752+Gregory+Ln,+Huntington+Beach,+CA+92646!3b1!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h!3m5!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D">18752 Gregory
+          href="https://www.google.com/maps/place/18752+Gregory+Ln,+Huntington+Beach,+CA+92646/@33.6897733,-117.9830413,3a,35.9y,350.5h,94.88t/data=!3m7!1e1!3m5!1sqXy5yqeoyzyBSy3CMuTeBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.877623197756023%26panoid%3DqXy5yqeoyzyBSy3CMuTeBg%26yaw%3D350.49933236793646!7i16384!8i8192!4m15!1m8!3m7!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!2s18752+Gregory+Ln,+Huntington+Beach,+CA+92646!3b1!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h!3m5!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D">18752
+          Gregory
           Ln. Huntington Beach CA 92646</a></p>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <a href="https://forms.gle/c3i1ExLchG1UiQiC6">
+        <h2>--> RSVP <--< /h2>
+      </a>
+      <p><i>Plz complete our form by 4/20/2026</i></p>
     </div>
   </section>
 
@@ -179,13 +193,6 @@ audio::-webkit-media-controls-mute-button {
       <p>Ceremony — TBD</p>
       <p>Reception — TBD</p>
       <p>Vibes — immaculate</p>
-    </div>
-  </section>
-
-  <section>
-    <div class="container">
-      <a href="https://forms.gle/c3i1ExLchG1UiQiC6"><h2>--> RSVP <--</h2></a>
-      <p><i>Plz complete our form</i></p>
     </div>
   </section>
 
@@ -213,10 +220,157 @@ audio::-webkit-media-controls-mute-button {
     <img src="img/santorini.jpeg" style="transform: rotate(1.6deg);" />
     <p>santorini</p>
     <img src="img/zinque.JPG" style="transform: rotate(-1deg);" />
+    <p>mluv</p>
+    <img src="img/thering.jpeg" style="transform: rotate(2.1deg);" />
+    <p>the ring</p>
+
+    <img src="img/kawaii.jpeg" style="transform: rotate(-1.7deg);" />
+    <p>kawaii</p>
+
+    <img src="img/duffy.jpeg" style="transform: rotate(0.9deg);" />
+    <p>duffy</p>
+
+    <img src="img/harajuku.PNG" style="transform: rotate(-2.3deg);" />
+    <p>harajuku</p>
+
+    <img src="img/brickst.JPG" style="transform: rotate(1.4deg);" />
+    <p>brick st tokyo</p>
+
+    <img src="img/praha.jpeg" style="transform: rotate(-0.6deg);" />
+    <p>praha</p>
+
+    <img src="img/lukewedding.jpeg" style="transform: rotate(2.7deg);" />
+    <p>luke wedding</p>
+
+    <img src="img/rariwarin.JPG" style="transform: rotate(-3.2deg);" />
+    <p>rari warin koh lanta</p>
+
+    <img src="img/robes.JPG" style="transform: rotate(1.1deg);" />
+    <p>robes</p>
+
+    <img src="img/goldentemple.jpeg" style="transform: rotate(-1.2deg);" />
+    <p>golden temple thailand</p>
+
+    <img src="img/broom.jpeg" style="transform: rotate(2.4deg);" />
+    <p>broom</p>
+
+    <img src="img/ocfair.jpeg" style="transform: rotate(-2.8deg);" />
+    <p>oc fair</p>
+
+    <img src="img/libluv2.JPG" style="transform: rotate(0.5deg);" />
+    <p>lib luv2</p>
+
+    <img src="img/libluv.JPG" style="transform: rotate(1.9deg);" />
+    <p>lib luv</p>
+
+    <img src="img/vegas.jpeg" style="transform: rotate(-1.4deg);" />
+    <p>vegas</p>
+
+    <img src="img/luv.jpeg" style="transform: rotate(0.7deg);" />
     <p>luv</p>
+
+    <img src="img/robbiciajtree.JPEG" style="transform: rotate(-3.5deg);" />
+    <p>robbicia jtree</p>
+
+    <img src="img/facemask.jpeg" style="transform: rotate(1.2deg);" />
+    <p>face mask</p>
+
+    <img src="img/mexicowine.jpeg" style="transform: rotate(-2.0deg);" />
+    <p>mexico wine country</p>
+
+    <img src="img/halloween21.jpeg" style="transform: rotate(1.6deg);" />
+    <p>halloween 21</p>
+
+    <img src="img/NYE2019.JPG" style="transform: rotate(-1.8deg);" />
+    <p>nye 19</p>
+
+    <img src="img/NYC.JPG" style="transform: rotate(3.0deg);" />
+    <p>nyc covid</p>
+
+    <img src="img/mtvesuvius.jpeg" style="transform: rotate(-0.7deg);" />
+    <p>mt vesuvius naples italy</p>
+
+    <img src="img/naxosmaybe.jpeg" style="transform: rotate(2.3deg);" />
+    <p>naxos maybe</p>
+
+    <img src="img/greece.jpeg" style="transform: rotate(-1.1deg);" />
+    <p>greece</p>
+
+    <img src="img/monalisa.jpeg" style="transform: rotate(0.8deg);" />
+    <p>mona lisa</p>
+
+    <img src="img/eiffel.jpeg" style="transform: rotate(-2.7deg);" />
+    <p>eiffel </p>
+
+    <img src="img/parkerfam.jpeg" style="transform: rotate(1.5deg);" />
+    <p>parker fam praha</p>
+
+    <img src="img/dogbar.jpeg" style="transform: rotate(-3.1deg);" />
+    <p>dog bar praha</p>
+
+    <img src="img/krka.jpeg" style="transform: rotate(0.4deg);" />
+    <p>krka falls croatia</p>
+
+    <img src="img/lastnightpraha.png" style="transform: rotate(-1.9deg);" />
+    <p>last night in praha</p>
+
+    <img src="img/robbiciawedding.jpeg" style="transform: rotate(2.0deg);" />
+    <p>robbicia wedding</p>
+
+    <img src="img/meme.png" style="transform: rotate(-0.3deg);" />
+    <p>meme</p>
+
+    <img src="img/copenhagen.JPG" style="transform: rotate(1.7deg);" />
+    <p>copenhagen nyhavn</p>
+
+    <img src="img/prahacig.JPG" style="transform: rotate(-2.5deg);" />
+    <p>praha cig</p>
+
+    <img src="img/venicemesginabottle.jpeg" style="transform: rotate(2.9deg);" />
+    <p>venice message ina bottle</p>
+
+    <img src="img/venice.jpeg" style="transform: rotate(-1.0deg);" />
+    <p>venice</p>
+
+    <img src="img/budapest.jpeg" style="transform: rotate(0.6deg);" />
+    <p>budapest bath haus</p>
+
+    <img src="img/ballastpoint.jpeg" style="transform: rotate(-2.1deg);" />
+    <p>ballast point 🤙</p>
+
+    <img src="img/baci.jpeg" style="transform: rotate(1.3deg);" />
+    <p>baci</p>
+
+    <img src="img/fishwharf.jpeg" style="transform: rotate(-1.6deg);" />
+    <p>fish wharf</p>
+
+    <img src="img/joshuatree.jpeg" style="transform: rotate(2.2deg);" />
+    <p>joshuatree</p>
+
+    <img src="img/usfclubsoccer.jpeg" style="transform: rotate(-0.9deg);" />
+    <p>usf club soccer dayz</p>
+
+    <img src="img/santacon.JPG" style="transform: rotate(1.8deg);" />
+    <p>santa con</p>
+
+    <img src="img/balboa2018.png" style="transform: rotate(-3.3deg);" />
+    <p>balboa st 2018</p>
+
+    <img src="img/cherryblossom.jpeg" style="transform: rotate(0.2deg);" />
+    <p>cherrys blossom ggp</p>
+
+    <img src="img/ggp.jpeg" style="transform: rotate(2.4deg);" />
+    <p>ggp</p>
+
+    <img src="img/ggb.JPG" style="transform: rotate(-1.3deg);" />
+    <p>ggb</p>
+
     <img src="img/brick-bg.jpeg" />
     <p>bricked up</p>
+
   </div>
+
+  <div class="bottom"><a href="#top">back to top (scroll up) ⬆️🆙</a></div>
 
 </body>
 
