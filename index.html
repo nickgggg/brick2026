@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -12,7 +13,13 @@
       margin: 0;
       padding: 0;
       background: #fffef4;
-      font-family: "Comic Sans MS", "Comic Sans", cursive;
+      font-family:
+       "Comic Sans MS", "Comic Sans",
+        "Chalkboard SE", "Chalkboard", 
+       "Marker Felt",
+    -apple-system, system-ui,
+    BlinkMacSystemFont, "Segoe UI",
+    sans-serif;
       color: #222;
       text-align: center;
     }
@@ -60,40 +67,92 @@
       color: #555;
       transform: rotate(-0.5deg);
     }
-    audio {
-    width: 250px;
-    margin: 20px auto;
-    display: block;
-    filter: drop-shadow(2px 2px 0 #000);
-    transform: rotate(-2deg);
-  }
 
-  audio::-webkit-media-controls-panel {
-    background: #fffbe6;
-    border: 2px dashed #000;
-  }
+    /* audio {
+      width: 250px;
+      margin: 20px auto;
+      display: block;
+      filter: drop-shadow(2px 2px 0 #000);
+      transform: rotate(-2deg);
+    }
 
-  audio::-webkit-media-controls-play-button,
-  audio::-webkit-media-controls-mute-button {
-    transform: rotate(4deg);
-    filter: hue-rotate(10deg);
-  }
-  section .gallery {
+    audio::-webkit-media-controls-panel {
+      background: #fffbe6;
+      border: 2px dashed #000;
+    }
+
+    audio::-webkit-media-controls-play-button,
+    audio::-webkit-media-controls-mute-button {
+      transform: rotate(4deg);
+      filter: hue-rotate(10deg);
+    } */
+
+    
+.audio-shell {
+  display: inline-block;
+  margin: 30px auto;
+  padding: 12px 18px;
+  border: 3px dashed #000;
+  background: #fffbe6;
+  box-shadow: 4px 4px 0 #000;
+  transform: rotate(-2deg);
+}
+
+.audio-shell audio {
+  display: block;
+  width: 260px;
+  max-width: 80vw;
+}
+
+.audio-label {
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 6px;
+}
+
+audio::-webkit-media-controls-panel {
+  background: #fffdf2;
+  border-radius: 0;
+}
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-mute-button {
+  transform: rotate(3deg);
+}
+
+
+    .gallery {
       overflow-x: hidden;
-  }
-  .gallery img {
-    max-width: 80%;
-    margin: 10px;
-    border: 5px solid #ccc;
-    box-shadow: 2px 2px 8px rgba(0,0,0,0.2);
-  }
+    }
+
+    .gallery img {
+      max-width: 80%;
+      margin: 10px;
+      border: 5px solid #ccc;
+      box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .gallery {
+      font-style: italic;
+    }
   </style>
 </head>
 
 
-<audio controls loop>
+<!-- <audio controls loop>
   <source src="audio/dish.mp3" type="audio/mpeg">
-</audio>
+</audio> -->
+
+
+<div class="audio-shell">
+  <div class="audio-label">🎧</div>
+  <audio controls loop>
+    <source src="music.mp3" type="audio/mpeg">
+    Your browser does not support the audio element.
+  </audio>
+</div>
+
 
 
 <body>
@@ -105,8 +164,12 @@
   <section>
     <div class="container">
       <h2>Details</h2>
-      <p>When: <a href="webcal://p108-caldav.icloud.com/published/2/NDM1NzMwOTYxNDM1NzMwOVAcYGeuESNDXVVzl1B-RteHem269uU1O1sOWOTA8qf8TU99fjKcwgzDvhwTMyJKAeG530ujH77k4kcQ-YY7HOU">10/10/2026... click 2 subscribe</a></p>
-      <p>Where: <a href="https://www.google.com/maps/place/18752+Gregory+Ln,+Huntington+Beach,+CA+92646/@33.6897733,-117.9830413,3a,35.9y,350.5h,94.88t/data=!3m7!1e1!3m5!1sqXy5yqeoyzyBSy3CMuTeBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.877623197756023%26panoid%3DqXy5yqeoyzyBSy3CMuTeBg%26yaw%3D350.49933236793646!7i16384!8i8192!4m15!1m8!3m7!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!2s18752+Gregory+Ln,+Huntington+Beach,+CA+92646!3b1!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h!3m5!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D">Gregory Ln. Huntington Beach CA 92646</a></p>
+      <p>When: <a
+          href="webcal://p108-caldav.icloud.com/published/2/NDM1NzMwOTYxNDM1NzMwOVAcYGeuESNDXVVzl1B-RteHem269uU1O1sOWOTA8qf8TU99fjKcwgzDvhwTMyJKAeG530ujH77k4kcQ-YY7HOU">10/10/2026...
+          click 2 subscribe</a></p>
+      <p>Where: <a
+          href="https://www.google.com/maps/place/18752+Gregory+Ln,+Huntington+Beach,+CA+92646/@33.6897733,-117.9830413,3a,35.9y,350.5h,94.88t/data=!3m7!1e1!3m5!1sqXy5yqeoyzyBSy3CMuTeBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.877623197756023%26panoid%3DqXy5yqeoyzyBSy3CMuTeBg%26yaw%3D350.49933236793646!7i16384!8i8192!4m15!1m8!3m7!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!2s18752+Gregory+Ln,+Huntington+Beach,+CA+92646!3b1!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h!3m5!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D">18752 Gregory
+          Ln. Huntington Beach CA 92646</a></p>
     </div>
   </section>
 
@@ -121,9 +184,8 @@
 
   <section>
     <div class="container">
-      <h2>RSVP</h2>
-      <p>Coming soon</p>
-      <a href="">(insert Goog Form here)</a></p>
+      <a href="https://forms.gle/c3i1ExLchG1UiQiC6"><h2>--> RSVP <--</h2></a>
+      <p><i>Plz complete our form</i></p>
     </div>
   </section>
 
@@ -131,19 +193,31 @@
     Ya we doin it.
   </footer>
 
-    <div class="gallery">
-        <img src="img/tokyo.jpeg" style="transform: rotate(1deg);"/><p>tokyo</p>
-        <img src="img/naxos.JPG" style="transform: rotate(-4deg);"/><p>naxos</p>
-        <img src="img/davidmissywedding.jpeg" style="transform: rotate(-.1deg);"/><p>luv</p>
-        <img src="img/khaosok.jpeg" style="transform: rotate(-2.2deg);"/><p>khao sok 3 brotherz</p>
-        <img src="img/gregory.jpeg" style="transform: rotate(.3deg);"/><p>gregory ln</p>
-        <img src="img/alyssagarrettwedding.jpeg" style="transform: rotate(-2.4deg);"/><p>luv</p>
-        <img src="img/rosarito.JPG" style="transform: rotate(2.8deg);"/><p>rosarito</p>
-        <img src="img/sf.jpeg" style="transform: rotate(-.5deg);"/><p>sf</p>
-        <img src="img/santorini.jpeg" style="transform: rotate(1.6deg);"/><p>santorini</p>
-        <img src="img/zinque.JPG" style="transform: rotate(-1deg);"/><p>luv</p>
-        <img src="img/brick-bg.jpeg"/><p>bricked up</p>
-    </div>
+  <div class="gallery">
+    <img src="img/tokyo.jpeg" style="transform: rotate(1deg);" />
+    <p>tokyo</p>
+    <img src="img/naxos.JPG" style="transform: rotate(-4deg);" />
+    <p>naxos</p>
+    <img src="img/davidmissywedding.jpeg" style="transform: rotate(-.1deg);" />
+    <p>luv</p>
+    <img src="img/khaosok.jpeg" style="transform: rotate(-2.2deg);" />
+    <p>khao sok 3 brotherz</p>
+    <img src="img/gregory.jpeg" style="transform: rotate(.3deg);" />
+    <p>gregory ln</p>
+    <img src="img/alyssagarrettwedding.jpeg" style="transform: rotate(-2.4deg);" />
+    <p>luv</p>
+    <img src="img/rosarito.JPG" style="transform: rotate(2.8deg);" />
+    <p>rosarito</p>
+    <img src="img/sf.jpeg" style="transform: rotate(-.5deg);" />
+    <p>sf</p>
+    <img src="img/santorini.jpeg" style="transform: rotate(1.6deg);" />
+    <p>santorini</p>
+    <img src="img/zinque.JPG" style="transform: rotate(-1deg);" />
+    <p>luv</p>
+    <img src="img/brick-bg.jpeg" />
+    <p>bricked up</p>
+  </div>
 
 </body>
+
 </html>
