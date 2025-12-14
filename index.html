@@ -12,7 +12,7 @@
     body {
       margin: 0;
       padding: 0;
-      background: #fffef4;
+      /* background: #fffef4; */
       font-family:
         "Comic Sans MS", "Comic Sans",
         "Chalkboard SE", "Chalkboard",
@@ -22,11 +22,17 @@
         sans-serif;
       color: #222;
       text-align: center;
-    }
+      overflow-x: hidden;
+      border: 6px ridge pink;
+  background:
+    radial-gradient(rgba(0,0,0,0.03) 1px, transparent 1px),
+    radial-gradient(rgba(0,0,0,0.02) 1px, transparent 1px),
+    #fffef4;
+  background-size: 3px 3px, 5px 5px;    }
 
     header {
       padding: 70px 20px 50px;
-      border-bottom: 3px dotted #000;
+      border-bottom: 3px dotted #96499d;
       transform: rotate(-0.4deg);
     }
 
@@ -34,7 +40,7 @@
       margin: 0;
       font-size: 3rem;
       letter-spacing: 1px;
-      text-shadow: 1px 1px 0 #ddd;
+      text-shadow: 2px 2px 0 #9b9b9b;
       transform: rotate(1deg);
     }
 
@@ -42,11 +48,13 @@
       font-size: 1.9rem;
       margin: 40px 0 20px;
       transform: rotate(-1.2deg);
+      text-shadow: 1px 1px 0 #9b9b9b;
+
     }
 
     section {
       padding: 40px 20px;
-      border-bottom: 2px dashed #777;
+      border-bottom: 3px dotted #96499d;
       transform: rotate(0.2deg);
     }
 
@@ -67,26 +75,6 @@
       color: #555;
       transform: rotate(-0.5deg);
     }
-
-    /* audio {
-      width: 250px;
-      margin: 20px auto;
-      display: block;
-      filter: drop-shadow(2px 2px 0 #000);
-      transform: rotate(-2deg);
-    }
-
-    audio::-webkit-media-controls-panel {
-      background: #fffbe6;
-      border: 2px dashed #000;
-    }
-
-    audio::-webkit-media-controls-play-button,
-    audio::-webkit-media-controls-mute-button {
-      transform: rotate(4deg);
-      filter: hue-rotate(10deg);
-    } */
-
 
     .audio-shell {
       display: inline-block;
@@ -129,8 +117,9 @@
     .gallery img {
       max-width: 80%;
       margin: 10px;
-      border: 5px solid #ccc;
+      border: 5px solid white;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+      max-height: 90vh;
     }
 
     .gallery {
@@ -141,8 +130,8 @@
       margin: 30px 0;
       font-size: 0.9rem;
     }
-    img {max-height: 90vh;}
-  </style>
+
+</style>
 </head>
 
 
@@ -158,14 +147,17 @@
 </div>
 
 <body>
+
   <header>
     <h1>🧱 BRICK 💍</h1>
-    <p>Brenna n Nick r getting married</p>
+    <p><u>Br</u>enna n N<u>ick</u> r getting married</p>
+    <br>
     <div class="gallery">
       <img src="img/brickst.JPG" />
     </div>
+    <br>
     <p><i>brought to you by</i></p>
-        <img src="tinder.png" alt="tinder" style="height:24px">
+    <img src="tinder.png" alt="tinder" style="height:24px">
 
   </header>
 
@@ -209,24 +201,33 @@
   <div class="gallery">
     <img src="img/tokyo.jpeg" style="transform: rotate(1deg);" />
     <p>tokyo</p>
+
     <img src="img/naxos.JPG" style="transform: rotate(-4deg);" />
     <p>naxos</p>
+
     <img src="img/davidmissywedding.jpeg" style="transform: rotate(-.1deg);" />
     <p>luv</p>
+
     <img src="img/khaosok.jpeg" style="transform: rotate(-2.2deg);" />
     <p>khao sok 3 brotherz</p>
+
     <img src="img/gregory.jpeg" style="transform: rotate(.3deg);" />
     <p>gregory ln</p>
+
     <img src="img/alyssagarrettwedding.jpeg" style="transform: rotate(-2.4deg);" />
     <p>luv</p>
+
     <img src="img/rosarito.JPG" style="transform: rotate(2.8deg);" />
     <p>rosarito</p>
+
     <img src="img/sf.jpeg" style="transform: rotate(-.5deg);" />
     <p>sf</p>
     <img src="img/santorini.jpeg" style="transform: rotate(1.6deg);" />
     <p>santorini</p>
+
     <img src="img/zinque.JPG" style="transform: rotate(-1deg);" />
     <p>mluv</p>
+
     <img src="img/thering.jpeg" style="transform: rotate(2.1deg);" />
     <p>the ring</p>
 
