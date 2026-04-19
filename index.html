@@ -5,7 +5,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BRICK 2026 🧱</title>
-  <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+  <link rel="icon" type="image/svg+xml" href="img/favicon.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=MonteCarlo&display=swap" rel="stylesheet">
 
 
   <style>
@@ -62,7 +65,7 @@
     .container {
       max-width: 700px;
       margin: 0 auto;
-      transform: rotate(0.6deg);
+      /* transform: rotate(0.6deg); */
     }
 
     p {
@@ -70,7 +73,26 @@
       margin: 8px 0;
     }
 
-    .cal-link {font-size: .8rem;}
+    .cal-link {
+      font-size: .8rem;
+    }
+
+    .calendar-links {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 12px;
+      justify-items: center;
+      margin: 16px 0;
+    }
+
+    .calendar-links a {
+      background: #fff8e3;
+      border: 2px solid #96499d;
+      border-radius: 8px;
+      display: inline-block;
+      padding: 10px 14px;
+      min-width: 160px;
+    }
 
     footer {
       padding: 35px;
@@ -112,21 +134,146 @@
       transform: rotate(3deg);
     }
 
-
-    .gallery {
-      overflow-x: hidden;
+    .ticker {
+      position: relative;
+      overflow: hidden;
+      background: #000;
+      color: #fff;
+      border-bottom: 4px ridge #96499d;
+      font-size: 1.1rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
     }
 
-    .gallery img {
-      max-width: 80%;
-      margin: 10px;
+    .ticker__track {
+      display: inline-block;
+      white-space: nowrap;
+      padding-left: 100%;
+      animation: marquee 45s linear infinite;
+    }
+
+    .ticker__track span {
+      display: inline-block;
+      padding: 12px 0;
+    }
+
+    @keyframes marquee {
+      from {
+        transform: translateX(0);
+      }
+
+      to {
+        transform: translateX(-100%);
+      }
+    }
+
+    .index-links {
+      letter-spacing: 0.2em;
+      background-color: #000000;
+      color: hotpink;
+
+    }
+
+    .index-links a {
+      color: #00fff7;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    .index-links a:hover {
+      text-decoration: underline;
+    }
+
+    .index-links .container a {
+      margin: 5px;
+    }
+
+    #rsvp {
+      background-image: url('img/brick-bg.jpeg');
+      background-color: rgba(255, 255, 255, 0.6);
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+
+    }
+
+    .attire-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-top: 24px;
+      justify-items: center;
+    }
+
+    .attire-grid img {
+      width: 100%;
+      max-width: 260px;
+      height: auto;
+      border: 5px solid #fff;
+      box-shadow: 2px 2px 12px rgba(0, 0, 0, 0.2);
+    }
+
+    .honeymoon {
+      background-image: url('img/beach.jpg');
+      background-color: rgba(255, 255, 255, 0.6);
+      background-blend-mode: overlay;
+      background-size: cover;
+      background-repeat: no-repeat;
+      background-position: center;
+      color: black;
+    }
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 20px;
+      justify-items: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 0 12px;
+      font-style: italic;
+    }
+
+    @media (min-width: 1200px) {
+      .gallery {
+        grid-template-columns: repeat(3, minmax(320px, 1fr));
+      }
+    }
+
+    @media (max-width: 950px) {
+      .gallery {
+        grid-template-columns: repeat(2, minmax(240px, 1fr));
+      }
+    }
+
+    .gallery img,
+    .attire-grid img,
+    #header-img {
+      width: auto;
+      height: auto;
+      max-width: 100%;
+      max-height: 90vh;
       border: 5px solid white;
       box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
-      max-height: 90vh;
+      display: block;
     }
 
-    .gallery {
-      font-style: italic;
+    .header-img {
+      display: flex;
+      justify-content: center;
+    }
+
+    .gallery-item {
+      width: 100%;
+      max-width: 360px;
+      text-align: center;
+    }
+
+    .gallery-item p {
+      margin: 10px 0 0;
+      font-size: 0.95rem;
     }
 
     .bottom {
@@ -141,261 +288,283 @@
   <source src="audio/dish.mp3" type="audio/mpeg">
 </audio> -->
 
-<div id="top" class="audio-shell">
+<div id="top" class="ticker">
+  <div class="ticker__track">
+    <span>Bricks are among the oldest, most durable building materials, with origins dating back to 7,000 BC. Brick is an exceptionally durable, sustainable building material with a lifespan often ranging from 100 to over 500 years. Made from clay, shale, or concrete, they are fired in kilns for strength, creating energy-efficient, fire-resistant, and sustainable structures. Common types include red clay (colored by iron oxide) and dense concrete.</span>
+  </div>
+</div>
+
+<div class="audio-shell">
   <div class="audio-label">🎧</div>
   <audio controls loop>
-    <source src="audio/dish.mp3" type="audio/mpeg">
+    <source src="audio/The Soul Scratchers - Scratch My Back, Part 1 & 2 (1972).mp3" type="audio/mpeg">
   </audio>
 </div>
 
 <body>
 
   <header>
-    <h1>🧱 BRICK 💍</h1>
-    <p><u>Br</u>enna n N<u>ick</u> r getting married</p>
+    <h1>🧱 BRICK 2026 💍</h1>
+    <p><u>Br</u>enna & N<u>ick</u> are getting married</p>
     <br>
-    <div class="gallery">
-      <img src="img/brickst.JPG" />
+    <div class="header-img">
+      <img id="header-img" src="img/engagement/IMG_9519.jpeg" alt="Engagement Photo">
     </div>
     <br>
-    <p><i>brought to you by</i></p>
-    <img src="tinder.png" alt="tinder" style="height:24px">
-
+    <p style="font-family: MonteCarlo, cursive;font-weight: 400;"><i>brought to you by</i></p>
+    <img src="img/tinder.png" alt="tinder" style="height:24px">
   </header>
 
-
-
-  <section>
+  <section class="index-links">
     <div class="container">
-      <h2>Details</h2>
-      <p>When: <strong>10/10/2026</strong></p>
-      <a class="cal-link" href="webcal://p108-caldav.icloud.com/published/2/NDM1NzMwOTYxNDM1NzMwOVAcYGeuESNDXVVzl1B-RteHem269uU1O1sOWOTA8qf8TU99fjKcwgzDvhwTMyJKAeG530ujH77k4kcQ-YY7HOU">
-          click 2 subscribe (iPhoners)</a>
-      <br><br>
-      <a class="cal-link" href="🧱 BRICK 2026 💍.ics">
-          click 2 download (Androids (Robby))</a>    
-      <br><br>
-      <p>Where: <a
-          href="https://www.google.com/maps/place/18752+Gregory+Ln,+Huntington+Beach,+CA+92646/@33.6897733,-117.9830413,3a,35.9y,350.5h,94.88t/data=!3m7!1e1!3m5!1sqXy5yqeoyzyBSy3CMuTeBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.877623197756023%26panoid%3DqXy5yqeoyzyBSy3CMuTeBg%26yaw%3D350.49933236793646!7i16384!8i8192!4m15!1m8!3m7!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!2s18752+Gregory+Ln,+Huntington+Beach,+CA+92646!3b1!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h!3m5!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
-          target="_blank"><strong>18752
-          Gregory
-          Ln. Huntington Beach CA 92646</strong></a></p>
+      <a href="#details">Details</a> /
+      <a href="#rsvp">RSVP</a> /
+      <a href="#schedule">Schedule</a> /
+      <a href="#attire">Attire</a> /
+      <a href="#honeymoon">Honeymoon</a> /
+      <a href="#engagement-shoot">Engagement Pics</a> /
+      <a href="#gallery">Gallery</a>
     </div>
   </section>
 
-  <section>
+  <section id="details">
+    <div class="container">
+      <h2>WHEN</h2>
+      <p>Saturday, 10/10/2026</p>
+      <div class="calendar-links">
+        <a class="cal-link"
+          href="webcal://p108-caldav.icloud.com/published/2/NDM1NzMwOTYxNDM1NzMwOVAcYGeuESNDXVVzl1B-RteHem269uU1O1sOWOTA8qf8TU99fjKcwgzDvhwTMyJKAeG530ujH77k4kcQ-YY7HOU">
+          add 2 calendar (iPhoners)
+        </a>
+        <a class="cal-link" href="🧱 BRICK 2026 💍.ics">
+          add 2 calendar (Androids (Robby))
+        </a>
+      </div><br>
+      <h2>WHERE</h2>
+      <p>Casa de Parker<br><a
+          href="https://www.google.com/maps/place/18752+Gregory+Ln,+Huntington+Beach,+CA+92646/@33.6897733,-117.9830413,3a,35.9y,350.5h,94.88t/data=!3m7!1e1!3m5!1sqXy5yqeoyzyBSy3CMuTeBg!2e0!6shttps:%2F%2Fstreetviewpixels-pa.googleapis.com%2Fv1%2Fthumbnail%3Fcb_client%3Dmaps_sv.tactile%26w%3D900%26h%3D600%26pitch%3D-4.877623197756023%26panoid%3DqXy5yqeoyzyBSy3CMuTeBg%26yaw%3D350.49933236793646!7i16384!8i8192!4m15!1m8!3m7!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!2s18752+Gregory+Ln,+Huntington+Beach,+CA+92646!3b1!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h!3m5!1s0x80dd26d00464d867:0xc0ac79c289d1feb5!8m2!3d33.6901482!4d-117.9830712!16s%2Fg%2F11b8yqxp4h?entry=ttu&g_ep=EgoyMDI1MTIwMi4wIKXMDSoASAFQAw%3D%3D"
+          target="_blank">
+          <i>18752 Gregory
+            Ln. Huntington Beach CA 92646</i></a></p>
+    </div>
+  </section>
+
+  <section id="rsvp">
     <div class="container">
       <a href="https://forms.gle/c3i1ExLchG1UiQiC6" target="_blank">
         <h2>➡️ RSVP 📋</h2>
       </a>
-      <p><i>Plz complete our form by 4/20/2026</i></p>
+      <p><i>Plz RSVP by 6/9/2026</i></p>
     </div>
   </section>
 
-  <section>
+  <section id="schedule">
     <div class="container">
-      <h2>Schedule</h2>
-      <p>Ceremony — TBD</p>
-      <p>Reception — TBD</p>
-      <p>Attire — TBD...</p>
-      <p>Vibes — immaculate</p>
+      <h2>Schedule (Tentative)</h2>
+      <p><i><u>Friday, 10/9/2026</u></i></p>
+      <p>TBD</p>
+      <br>
+      <p><i><u>Saturday, 10/10/2026</u></i></p>
+      <p>Ceremony — 4pm</p>
+      <p>Dinner — 5:30pm</p>
+      <p>Party — 7pm</p>
     </div>
   </section>
 
-  <footer>
-    Ya we doin it.
-  </footer>
+  <section id="attire">
+    <div class="container">
+      <h2>Attire: 🍸 Cocktail 💠</h2>
+      <p>BYO flair to traditional cocktail attire</p><br>
+      <p>Swagcessories encouraged</p><br>
+      <p><i>dust off that fedora</i></p>
 
-  <div class="gallery">
-    <img src="img/tokyo.jpeg" style="transform: rotate(1deg);" />
-    <p>tokyo</p>
+      <div class="attire-grid">
+        <img src="img/attire/carm.png" alt="Attire look 1" />
+        <img src="img/attire/tonyb.png" alt="Attire look 8" />
+        <img src="img/attire/edward.gif" alt="Attire look 3" />
+        <!-- <img src="img/attire/fedora.jpg" alt="Attire look 4" /> -->
+        <!-- <img src="img/attire/lady.jpg" alt="Attire look 5" /> -->
+        <img src="img/attire/paulie.jpg" alt="Attire look 6" />
+        <img src="img/attire/sitc.png" alt="Attire look 7" />
+                <img src="img/attire/paul.png" alt="Attire look 8" />
 
-    <img src="img/naxos.JPG" style="transform: rotate(-4deg);" />
-    <p>naxos</p>
+        <!-- <img src="img/attire/colonel.jpg" alt="Attire look 2" /> -->
+        <!-- <img src="img/attire/trisha.png" alt="Attire look 9" /> -->
+      </div>
 
-    <img src="img/davidmissywedding.jpeg" style="transform: rotate(-.1deg);" />
-    <p>luv</p>
+    </div>
+  </section>
 
-    <img src="img/khaosok.jpeg" style="transform: rotate(-2.2deg);" />
-    <p>khao sok 3 brotherz</p>
+  <section id="honeymoon" class="honeymoon">
+    <div class="container">
+      <h2>Honeymoon Fund</h2>
+      <p><i>in lieu of a registry, contributions to our honeymoon trip are greatly appreciated ✈️</i></p><br>
+      <div class="honeymoon-links">
+      <a href="https://www.venmo.com/u/Norbit" target="_blank">
+        <p>Venmo: @Norbit</p>
+      </a>
+      <p>Zelle: njg@outlook.com</p>
+      <a href="https://paypal.me/brick2026" target="_blank">
+        <p>paypal.me/brick2026</p>
+      </a>
+      </div>
+    </div>
+  </section>
 
-    <img src="img/gregory.jpeg" style="transform: rotate(.3deg);" />
-    <p>gregory ln</p>
+  <section style="background-color: black;">
+    <div class="container">
+      <footer style="color: white;">
+        Ya we doin it.
+      </footer>
+  </section>
 
-    <img src="img/alyssagarrettwedding.jpeg" style="transform: rotate(-2.4deg);" />
-    <p>dolled up</p>
+    <h2>Engagement Photos</h2>
+    <p>thank you mom</p>
 
-    <img src="img/rosarito.JPG" style="transform: rotate(2.8deg);" />
-    <p>rosarito</p>
+  <section class="gallery" id="engagement-shoot">
+      <img src="img/engagement/IMG_9796.jpg" style="transform: rotate(1.4deg);" />
+      <img src="img/engagement/IMG_9529.jpeg" style="transform: rotate(-.4deg);" />
+      <img src="img/engagement/IMG_9579.jpeg" style="transform: rotate(1deg);" />
+      <img src="img/engagement/IMG_9621.jpeg" style="transform: rotate(-1.3deg);" />
+      <img src="img/engagement/IMG_9677.jpeg" style="transform: rotate(-.4deg);" />
+      <img src="img/engagement/IMG_9798.jpg" style="transform: rotate(-.2deg);" />
+      <img src="img/engagement/IMG_9817.jpg" style="transform: rotate(.8deg);" />
+      <img src="img/engagement/IMG_9531.jpeg" style="transform: rotate(-.8deg);" />
+      <img src="img/engagement/IMG_9851.jpg" style="transform: rotate(1.2deg);" />
+      <img src="img/engagement/IMG_9519.jpeg" style="transform: rotate(.2deg);" />
+  </section>
 
-    <img src="img/sf.jpeg" style="transform: rotate(-.5deg);" />
-    <p>lands end</p>
+    <h2>Mmrs</h2>
 
-    <img src="img/santorini.jpeg" style="transform: rotate(1.6deg);" />
-    <p>santorini</p>
+  <div class="gallery" id="gallery">
+    <div class="gallery-item"><img src="img/tokyo.jpeg" style="transform: rotate(1deg);" />
+    <p>tokyo</p></div>
+    <div class="gallery-item"><img src="img/naxos.JPG" style="transform: rotate(-4deg);" />
+    <p>naxos</p></div>
+    <div class="gallery-item"><img src="img/davidmissywedding.jpeg" style="transform: rotate(-.1deg);" />
+    <p>luv</p></div>
+    <div class="gallery-item"><img src="img/khaosok.jpeg" style="transform: rotate(-2.2deg);" />
+    <p>khao sok 3 brotherz</p></div>
+    <div class="gallery-item"><img src="img/gregory.jpeg" style="transform: rotate(.3deg);" />
+    <p>gregory ln</p></div>
+    <div class="gallery-item"><img src="img/alyssagarrettwedding.jpeg" style="transform: rotate(-2.4deg);" />
+    <p>dolled up</p></div>
+    <div class="gallery-item"><img src="img/rosarito.JPG" style="transform: rotate(2.8deg);" />
+    <p>rosarito</p></div>
+    <div class="gallery-item"><img src="img/sf.jpeg" style="transform: rotate(-.5deg);" />
+    <p>lands end</p></div>
+    <div class="gallery-item"><img src="img/santorini.jpeg" style="transform: rotate(1.6deg);" />
+    <p>santorini</p></div>
+    <div class="gallery-item"><img src="img/zinque.JPG" style="transform: rotate(-1deg);" />
+    <p>mluv</p></div>
+    <div class="gallery-item"><img src="img/thering.jpeg" style="transform: rotate(2.1deg);" />
+    <p>the ring in ginza</p></div>
+    <div class="gallery-item"><img src="img/kawaii.jpeg" style="transform: rotate(-1.7deg);" />
+    <p>kawaii</p></div>
+    <div class="gallery-item"><img src="img/duffy.jpeg" style="transform: rotate(0.9deg);" />
+    <p>duffy</p></div>
+    <div class="gallery-item"><img src="img/harajuku.PNG" style="transform: rotate(-2.3deg);" />
+    <p>harajuku</p></div>
+    <div class="gallery-item"><img src="img/brickst.JPG" style="transform: rotate(1.4deg);" />
+    <p>brick st tokyo</p></div>
+    <div class="gallery-item"><img src="img/praha.jpeg" style="transform: rotate(-0.6deg);" />
+    <p>park in praha</p></div>
+    <div class="gallery-item"><img src="img/texas.JPG" style="transform: rotate(-2.6deg);" />
+    <p>giangregorio fam texas</p></div>
+    <div class="gallery-item"><img src="img/lukewedding.jpeg" style="transform: rotate(2.7deg);" />
+    <p>luke wedding</p></div>
+    <div class="gallery-item"><img src="img/rariwarin.JPG" style="transform: rotate(-3.2deg);" />
+    <p>rari warin koh lanta</p></div>
+    <div class="gallery-item"><img src="img/robes.JPG" style="transform: rotate(1.1deg);" />
+    <p>robes</p></div>
+    <div class="gallery-item"><img src="img/goldentemple.jpeg" style="transform: rotate(-1.2deg);" />
+    <p>golden temple thailand</p></div>
+    <div class="gallery-item"><img src="img/broom.jpeg" style="transform: rotate(2.4deg);" />
+    <p>broom</p></div>
+    <div class="gallery-item"><img src="img/ocfair.jpeg" style="transform: rotate(-2.8deg);" />
+    <p>oc fair</p></div>
+    <div class="gallery-item"><img src="img/libluv2.JPG" style="transform: rotate(0.5deg);" /></div>
+    <div class="gallery-item"><img src="img/libluv.JPG" style="transform: rotate(1.9deg);" />
+    <p>lib luv</p></div>
+    <div class="gallery-item"><img src="img/vegas.jpeg" style="transform: rotate(-1.4deg);" />
+    <p>vegas</p></div>
+    <div class="gallery-item"><img src="img/luv.jpeg" style="transform: rotate(0.7deg);" />
+    <p>more luv</p></div>
+    <div class="gallery-item"><img src="img/robbiciajtree.JPEG" style="transform: rotate(-3.5deg);" />
+    <p>robbicia jtree</p></div>
+    <div class="gallery-item"><img src="img/facemask.jpeg" style="transform: rotate(1.2deg);" />
+    <p>face mask</p></div>
+    <div class="gallery-item"><img src="img/mexicowine.jpeg" style="transform: rotate(-2.0deg);" />
+    <p>mexico valle</p></div>
+    <div class="gallery-item"><img src="img/halloween21.jpeg" style="transform: rotate(1.6deg);" />
+    <p>halloween 21</p></div>
+    <div class="gallery-item"><img src="img/NYE2019.JPG" style="transform: rotate(-1.8deg);" />
+    <p>nye 19</p></div>
+    <div class="gallery-item"><img src="img/NYC.JPG" style="transform: rotate(3.0deg);" />
+    <p>nyc covid</p></div>
+    <div class="gallery-item"><img src="img/mtvesuvius.jpeg" style="transform: rotate(-0.7deg);" />
+    <p>mt vesuvius naples italy</p></div>
+    <div class="gallery-item"><img src="img/greece.jpeg" style="transform: rotate(-1.1deg);" />
+    <p>santorini</p></div>
+    <div class="gallery-item"><img src="img/monalisa.jpeg" style="transform: rotate(0.8deg);" />
+    <p>mona lisa</p></div>
+    <div class="gallery-item"><img src="img/eiffel.jpeg" style="transform: rotate(-2.7deg);" />
+    <p>eiffel </p></div>
+    <div class="gallery-item"><img src="img/parkerfam.jpeg" style="transform: rotate(1.5deg);" />
+    <p>parker fam praha</p></div>
+    <div class="gallery-item"><img src="img/dogbar.jpeg" style="transform: rotate(-3.1deg);" />
+    <p>dog bar praha</p></div>
+    <div class="gallery-item"><img src="img/krka.jpeg" style="transform: rotate(0.4deg);" />
+    <p>krka falls croatia</p></div>
+    <div class="gallery-item"><img src="img/lastnightpraha.png" style="transform: rotate(-1.9deg);" />
+    <p>last night in praha</p></div>
+    <div class="gallery-item"><img src="img/robbiciawedding.jpeg" style="transform: rotate(2.0deg);" />
+    <p>robbicia wedding</p></div>
+    <div class="gallery-item"><img src="img/meme.png" style="transform: rotate(-0.3deg);" />
+    <p>meme</p></div>
+    <div class="gallery-item"><img src="img/copenhagen.JPG" style="transform: rotate(1.7deg);" />
+    <p>copenhagen nyhavn</p></div>
+    <div class="gallery-item"><img src="img/prahacig.JPG" style="transform: rotate(-2.5deg);" />
+    <p>praha cig</p></div>
+    <div class="gallery-item"><img src="img/venicemesginabottle.jpeg" style="transform: rotate(2.9deg);" />
+    <p>venice message ina bottle</p></div>
+    <div class="gallery-item"><img src="img/venice.jpeg" style="transform: rotate(-1.0deg);" />
+    <p>venice</p></div>
+    <div class="gallery-item"><img src="img/budapest.jpeg" style="transform: rotate(0.6deg);" />
+    <p>budapest bath haus</p></div>
+    <div class="gallery-item"><img src="img/ballastpoint.jpeg" style="transform: rotate(-2.1deg);" />
+    <p>ballast point 🤙</p></div>
+    <div class="gallery-item"><img src="img/baci.jpeg" style="transform: rotate(1.3deg);" />
+    <p>baci</p></div>
+    <div class="gallery-item"><img src="img/fishwharf.jpeg" style="transform: rotate(-1.6deg);" />
+    <p>fish wharf</p></div>
+    <div class="gallery-item"><img src="img/joshuatree.jpeg" style="transform: rotate(2.2deg);" />
+    <p>joshuatree</p></div>
+    <div class="gallery-item"><img src="img/usfclubsoccer.jpeg" style="transform: rotate(-0.9deg);" />
+    <p>usf club soccer dayz</p></div>
+    <div class="gallery-item"><img src="img/mykonos.JPG" style="transform: rotate(-0.9deg);" />
+    <p>mykonos</p></div>
+    <div class="gallery-item"><img src="img/santacon.JPG" style="transform: rotate(1.8deg);" />
+    <p>santa con</p></div>
+    <div class="gallery-item"><img src="img/balboa2018.png" style="transform: rotate(-3.3deg);" />
+    <p>balboa st 2018</p></div>
+    <div class="gallery-item"><img src="img/cherryblossom.jpeg" style="transform: rotate(0.2deg);" />
+    <p>cherrys blossom ggp</p></div>
+    <div class="gallery-item"><img src="img/ggp.jpeg" style="transform: rotate(2.4deg);" />
+    <p>ggp</p></div>
+    <div class="gallery-item"><img src="img/seantina.jpeg" style="transform: rotate(.4deg);" />
+    <p>seantina</p></div>
+    <div class="gallery-item"><img src="img/ggb.JPG" style="transform: rotate(-1.3deg);" />
+    <p>ggb</p></div>
+    <div class="gallery-item"><img src="img/brat.jpg" /></div>
+    <div class="gallery-item"><img src="img/brick-bg.jpeg" />
+    <p>bricked up</p></div>
+    </div>
 
-    <img src="img/zinque.JPG" style="transform: rotate(-1deg);" />
-    <p>mluv</p>
-
-    <img src="img/thering.jpeg" style="transform: rotate(2.1deg);" />
-    <p>the ring in ginza</p>
-
-    <img src="img/kawaii.jpeg" style="transform: rotate(-1.7deg);" />
-    <p>kawaii</p>
-
-    <img src="img/duffy.jpeg" style="transform: rotate(0.9deg);" />
-    <p>duffy</p>
-
-    <img src="img/harajuku.PNG" style="transform: rotate(-2.3deg);" />
-    <p>harajuku</p>
-
-    <img src="img/brickst.JPG" style="transform: rotate(1.4deg);" />
-    <p>brick st tokyo</p>
-
-    <img src="img/praha.jpeg" style="transform: rotate(-0.6deg);" />
-    <p>park in praha</p>
-
-    <img src="img/texas.JPG" style="transform: rotate(-2.6deg);" />
-    <p>giangregorio fam texas</p>
-
-    <img src="img/lukewedding.jpeg" style="transform: rotate(2.7deg);" />
-    <p>luke wedding</p>
-
-    <img src="img/rariwarin.JPG" style="transform: rotate(-3.2deg);" />
-    <p>rari warin koh lanta</p>
-
-    <img src="img/robes.JPG" style="transform: rotate(1.1deg);" />
-    <p>robes</p>
-
-    <img src="img/goldentemple.jpeg" style="transform: rotate(-1.2deg);" />
-    <p>golden temple thailand</p>
-
-    <img src="img/broom.jpeg" style="transform: rotate(2.4deg);" />
-    <p>broom</p>
-
-    <img src="img/ocfair.jpeg" style="transform: rotate(-2.8deg);" />
-    <p>oc fair</p>
-
-    <img src="img/libluv2.JPG" style="transform: rotate(0.5deg);" />
-
-    <img src="img/libluv.JPG" style="transform: rotate(1.9deg);" />
-    <p>lib luv</p>
-
-    <img src="img/vegas.jpeg" style="transform: rotate(-1.4deg);" />
-    <p>vegas</p>
-
-    <img src="img/luv.jpeg" style="transform: rotate(0.7deg);" />
-    <p>more luv</p>
-
-    <img src="img/robbiciajtree.JPEG" style="transform: rotate(-3.5deg);" />
-    <p>robbicia jtree</p>
-
-    <img src="img/facemask.jpeg" style="transform: rotate(1.2deg);" />
-    <p>face mask</p>
-
-    <img src="img/mexicowine.jpeg" style="transform: rotate(-2.0deg);" />
-    <p>mexico valle</p>
-
-    <img src="img/halloween21.jpeg" style="transform: rotate(1.6deg);" />
-    <p>halloween 21</p>
-
-    <img src="img/NYE2019.JPG" style="transform: rotate(-1.8deg);" />
-    <p>nye 19</p>
-
-    <img src="img/NYC.JPG" style="transform: rotate(3.0deg);" />
-    <p>nyc covid</p>
-
-    <img src="img/mtvesuvius.jpeg" style="transform: rotate(-0.7deg);" />
-    <p>mt vesuvius naples italy</p>
-
-    <img src="img/greece.jpeg" style="transform: rotate(-1.1deg);" />
-    <p>santorini</p>
-
-    <img src="img/monalisa.jpeg" style="transform: rotate(0.8deg);" />
-    <p>mona lisa</p>
-
-    <img src="img/eiffel.jpeg" style="transform: rotate(-2.7deg);" />
-    <p>eiffel </p>
-
-    <img src="img/parkerfam.jpeg" style="transform: rotate(1.5deg);" />
-    <p>parker fam praha</p>
-
-    <img src="img/dogbar.jpeg" style="transform: rotate(-3.1deg);" />
-    <p>dog bar praha</p>
-
-    <img src="img/krka.jpeg" style="transform: rotate(0.4deg);" />
-    <p>krka falls croatia</p>
-
-    <img src="img/lastnightpraha.png" style="transform: rotate(-1.9deg);" />
-    <p>last night in praha</p>
-
-    <img src="img/robbiciawedding.jpeg" style="transform: rotate(2.0deg);" />
-    <p>robbicia wedding</p>
-
-    <img src="img/meme.png" style="transform: rotate(-0.3deg);" />
-    <p>meme</p>
-
-    <img src="img/copenhagen.JPG" style="transform: rotate(1.7deg);" />
-    <p>copenhagen nyhavn</p>
-
-    <img src="img/prahacig.JPG" style="transform: rotate(-2.5deg);" />
-    <p>praha cig</p>
-
-    <img src="img/venicemesginabottle.jpeg" style="transform: rotate(2.9deg);" />
-    <p>venice message ina bottle</p>
-
-    <img src="img/venice.jpeg" style="transform: rotate(-1.0deg);" />
-    <p>venice</p>
-
-    <img src="img/budapest.jpeg" style="transform: rotate(0.6deg);" />
-    <p>budapest bath haus</p>
-
-    <img src="img/ballastpoint.jpeg" style="transform: rotate(-2.1deg);" />
-    <p>ballast point 🤙</p>
-
-    <img src="img/baci.jpeg" style="transform: rotate(1.3deg);" />
-    <p>baci</p>
-
-    <img src="img/fishwharf.jpeg" style="transform: rotate(-1.6deg);" />
-    <p>fish wharf</p>
-
-    <img src="img/joshuatree.jpeg" style="transform: rotate(2.2deg);" />
-    <p>joshuatree</p>
-
-    <img src="img/usfclubsoccer.jpeg" style="transform: rotate(-0.9deg);" />
-    <p>usf club soccer dayz</p>
-
-    <img src="img/mykonos.JPG" style="transform: rotate(-0.9deg);" />
-    <p>mykonos</p>
-
-    <img src="img/santacon.JPG" style="transform: rotate(1.8deg);" />
-    <p>santa con</p>
-
-    <img src="img/balboa2018.png" style="transform: rotate(-3.3deg);" />
-    <p>balboa st 2018</p>
-
-    <img src="img/cherryblossom.jpeg" style="transform: rotate(0.2deg);" />
-    <p>cherrys blossom ggp</p>
-
-    <img src="img/ggp.jpeg" style="transform: rotate(2.4deg);" />
-    <p>ggp</p>
-
-    <img src="img/seantina.jpeg" style="transform: rotate(.4deg);" />
-    <p>seantina</p>
-
-    <img src="img/ggb.JPG" style="transform: rotate(-1.3deg);" />
-    <p>ggb</p>
-
-    <img src="img/brick-bg.jpeg" />
-    <p>bricked up</p>
-
-  </div>
-
-  <div>
     <a
       href="https://drive.google.com/drive/folders/11oHaApHiuZGWCebRJW_GbzKNe2PrvkZwMlqfaLcOmUV5jhRX3wyzSbXH1GrcKM4AWTF_WeVn">
       <br>
-      <p><i>guest RSVP uploadz for your view pleasure</i></p>
+      <p><i>guest RSVP uploads for your viewing pleasure</i></p>
   </div>
   <div class="bottom"><a href="#top">back to top (scroll up) ⬆️🆙</a></div>
 
